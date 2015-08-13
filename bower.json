@@ -1,0 +1,32 @@
+{
+  "name": "raphael-test",
+  "version": "0.1.0",
+  "homepage": "",
+  "authors": [
+    "Rodrigo Morais"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigo-morais/vector-drawing/raphael-test"
+  },
+  "description": "This project is a software to sales representative to control your customers.",
+  "main": "./index.html",
+  "keywords": [
+    "Raphael.js",
+    "vector",
+    "drawing"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "component",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js"
+  ],
+  "devDependencies": {
+    "raphael": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}
