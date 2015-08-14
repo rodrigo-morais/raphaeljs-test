@@ -30,6 +30,7 @@ var createPaper = function(){
           pathArray[0] = ["M",this.ox,this.oy];
           drawingBox = paper.path(pathArray);
           drawingBox.attr({stroke: "#FF0000","stroke-width": 3});
+          drawingBox.node.draggable = false;
         }
         else{
           pathArray[pathArray.length] = ["L",this.ox,this.oy];
@@ -65,6 +66,8 @@ var createPaper = function(){
   });
     
   area.drag(move, start, up);
+
+  var zpd = new RaphaelZPD(paper, { zoom: true, pan: false, drag: false });
 };
 
 var createElement = function(){
@@ -102,7 +105,13 @@ var createRectangle = function(left, top, color, edge, width, height, drag){
 
   if(drag){
     rectangle.drag(moveFnc, startFnc, endFnc);
+    rectangle.click(function(){
+      this.transform("r45");
+    });
   }
+
+  rectangle.node.draggable = false;
+
 
   return rectangle;
 }
@@ -121,6 +130,8 @@ var createCircle = function(left, top, color, edge, radius){
   circle.attr("stroke", edge);
 
   circle.drag(moveFnc, startFnc, endFnc);
+
+  circle.node.draggable = false;
 
   return circle;
 }
